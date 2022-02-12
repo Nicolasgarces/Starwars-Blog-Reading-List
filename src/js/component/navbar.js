@@ -25,7 +25,8 @@ export const Navbar = () => {
                 className="dropdown-menu "
                 aria-labelledby="dropdownMenuButton1"
               >
-                <li>Empty</li>
+                <li>Empty</li>//aqui tengo que mostrar el boton de eliminar los favoritos
+
               </ul>
             </Link>
           </div>

@@ -28,7 +28,7 @@ const Layout = () => {
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
-						<Route exact path="/single/:theid">
+						 <Route exact path="/single/:theid">{/*despues de la /: se le pone la palabra que vamos a setear */}
 							<Single />
 						</Route>
 						<Route>

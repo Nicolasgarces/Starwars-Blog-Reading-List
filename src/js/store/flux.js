@@ -16,6 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       Characters: [],
       Vehicles: [],
       Planets: [],
+      Character:{}
+
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -28,22 +30,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 				*/
       },
       getCharacters: () => {
-        fetch("https://www.swapi.tech/api/people")
-          .then((res) => res.json())
+        fetch("https://www.swapi.tech/api/people")//fetch para obtener los perosnajes
+          .then((response) => response.json())
           .then((data) => setStore({ Characters: data.results }))
-          .catch((err) => console.error(err));
+          // .then(data => console.log(data.results)) //así podemos consultar el array en la consola, luego se debe setaer mira la linea 33
       },
       getVehicles: () => {
-        fetch("https://www.swapi.tech/api/vehicles")
-          .then((res) => res.json())
-          .then((data) => setStore({ Vehicles: data.results }))
-          .catch((err) => console.error(err));
+        fetch("https://www.swapi.tech/api/vehicles")//fetch para obtener los vehiculos
+          .then((response) => response.json())
+          .then((data) => setStore({ Vehicles: data.results })) 
       },
       getPlanets: () => {
-        fetch("https://www.swapi.tech/api/planets")
-          .then((res) => res.json())
+        fetch("https://www.swapi.tech/api/planets")//fetch para obtener los planetas
+          .then((response) => response.json())
           .then((data) => setStore({ Planets: data.results }))
-          .catch((err) => console.error(err));
+      },
+      getCharacter:(theid)=>{
+        fetch(`https://www.swapi.tech/api/people/${theid}`)//fetch para obtener cada personaje
+          .then((response) => response.json())
+          .then((data) => setStore({ Character: data.result }))
       },
 
       changeColor: (index, color) => {

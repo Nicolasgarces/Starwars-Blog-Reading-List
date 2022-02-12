@@ -1,0 +1,21 @@
+.wrapper{
+    /* max-height: 300px; */
+    border: 1px solid #add;
+    display:flex;
+    overflow-x:scroll;
+
+}
+
+.wrapper::-webkit-scrollbar{
+    width: 5;
+}
+
+.wrapper .item{
+    min-width: 100px;
+    /* height: 400px; */
+    /* line-height: 110px; */
+    text-align: center;
+    background-color: #ddd;
+    margin-right: 2px;
+}
+
