@@ -26,7 +26,34 @@ export const Single = (props) => {
           {store.Character.description}
           </h6></div>
       </div>
-      <hr />
+      <hr style={{color: `red`}}/>
+      <div className="row">
+        <div className="col-2 text-center">
+          <p style={{color: `red`}}>Name</p>
+          <p style={{color: `red`}}>{store.Character.properties?.name}</p>
+        </div>  
+        <div className="col-2 text-center">
+          <p style={{color: `red`}}>Birth Year</p>
+          <p style={{color: `red`}}>{store.Character.properties?.birth_year}</p>
+        </div> 
+        <div className="col-2 text-center">
+          <p style={{color: `red`}}>Gender</p>
+          <p style={{color: `red`}}>{store.Character.properties?.gender}</p>
+        </div> 
+        <div className="col-2 text-center">
+          <p style={{color: `red`}}>Height</p>
+          <p style={{color: `red`}}>{store.Character.properties?.height}</p>
+        </div> 
+        <div className="col-2 text-center">
+          <p style={{color: `red`}}>Skin Color</p>
+          <p style={{color: `red`}}>{store.Character.properties?.skin_color}</p>
+        </div> 
+        <div className="col-2 text-center">
+          <p style={{color: `red`}}>Eye Color</p>
+          <p style={{color: `red`}}>{store.Character.properties?.eye_color}</p>
+        </div> 
+      </div>
+      
     </div>
   );
 };

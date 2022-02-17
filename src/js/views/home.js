@@ -1,4 +1,4 @@
-import React, { useContext } from "react";//primero decimos que queremos utilizar el contexto en ponemos {useContext}
+import React, { useContext, useState } from "react";//primero decimos que queremos utilizar el contexto en ponemos {useContext}
 import "../../styles/home.css";
 import Card from "../component/Card";
 import { Context } from "../store/appContext"; //segundo decimos que queremos importar a context ponemos {Context}
@@ -8,6 +8,7 @@ export const Home = () => {
 	console.log(store.Characters); //aqui vemos en consola para saber si se visualiza el array para luego mapearlo
 	console.log(store.Vehicles);
 	console.log(store.Planets);
+	console.log(store.Character);
 	return (
 	<div>
 	<div className="container d-flex flex-column">
@@ -15,7 +16,7 @@ export const Home = () => {
     		<div className="wrapper">
 				<div className="item d-flex justify-content-start col-10">
 					{store.Characters.map((character,i)=>{
-					return(<Card className="c" key={i} name={character.name} id={character.uid}/>)
+					return(<Card  key={i} name={character.name} id={character.uid} gender={character.gender} className="c"/>)
 			 		} )}
 				</div>
 			</div>

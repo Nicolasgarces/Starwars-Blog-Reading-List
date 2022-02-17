@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+import { Context } from "../store/appContext";
 import{Link} from "react-router-dom";
 
 const Card = (props) => {
+  const { store, actions } = useContext(Context);
+  
   return (
     <div className="card position-relative mx-2" style={{ minWidth: "18rem" }}>
       <img
@@ -12,9 +15,9 @@ const Card = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">
-        Gender: male
+        Gender: {" "+props.gender}
         </p>
-        <p className="card-text">
+        <p className="card-text text-right">
         Hair-Color: blond
         </p>
         <p className="card-text">
@@ -24,7 +27,7 @@ const Card = (props) => {
           Learn more!
         </Link>
         <button type="button" className="btn btn-outline-warning  m-5">
-          <i className="bi bi-heart"></i>
+          <i className="bi bi-heart" onClick={()=>actions.addFavorites(props.name)}></i> 
         </button>
       </div>
     </div>

@@ -16,7 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       Characters: [],
       Vehicles: [],
       Planets: [],
-      Character:{}
+      Character:{},
+      Favorite:[]
 
     },
     actions: {
@@ -49,6 +50,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(`https://www.swapi.tech/api/people/${theid}`)//fetch para obtener cada personaje
           .then((response) => response.json())
           .then((data) => setStore({ Character: data.result }))
+      },
+      addFavorites:(fav)=>{
+        setStore({Favorite: getStore().Favorite.concat(fav)})
+      },
+      deleteFav:(i)=>{
+        setStore({Favorite: getStore().Favorite.filter(
+          (item,index) => index !== i)})
+        console.log("funciona");
       },
 
       changeColor: (index, color) => {
